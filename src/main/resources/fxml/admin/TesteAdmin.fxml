@@ -1,0 +1,11 @@
+@"
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" spacing="10" alignment="CENTER">
+    <Label text="TESTE - Tela Administrativa SIMPLES"/>
+    <Label text="Se esta tela abrir, o problema é no FXML original"/>
+    <Button text="Fechar" onAction="#fechar"/>
+</VBox>
+"@ | Out-File -FilePath "src\main\resources\fxml\admin\TesteAdmin.fxml" -Encoding UTF8

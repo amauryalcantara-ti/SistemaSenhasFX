@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane prefHeight="700" prefWidth="1000" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistemasenhas.views.admin.guiches.GuichesController">
+    <top>
+        <VBox style="-fx-background-color: #1a237e; -fx-padding: 5 15 5 15;">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="GERENCIAMENTO DE GUICHÊS" />
+                <Region HBox.hgrow="ALWAYS" />
+                </HBox>
+        </VBox>
+    </top>
+    <center>
+        <TabPane tabClosingPolicy="UNAVAILABLE">
+            <Tab text="Guichês">
+                <VBox spacing="20" style="-fx-padding: 20;">
+                    <VBox spacing="10" style="-fx-background-color: #f8f9fa; -fx-padding: 20; -fx-border-radius: 5; -fx-border-color: #dee2e6;">
+                        <GridPane hgap="15" vgap="10">
+                            <columnConstraints>
+                                <ColumnConstraints prefWidth="100" />
+                                <ColumnConstraints prefWidth="300" />
+                                <ColumnConstraints prefWidth="100" />
+                                <ColumnConstraints prefWidth="300" />
+                            </columnConstraints>
+                            <children>
+                                <Label text="Número:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <TextField fx:id="txtNumero" promptText="Ex: 01" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                                <Label text="Descrição:" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                                <TextField fx:id="txtDescricao" promptText="Ex: Guichê Principal" GridPane.columnIndex="3" GridPane.rowIndex="0" />
+
+                                <Label text="Localização:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                                <ComboBox fx:id="comboLocalizacao" prefWidth="300" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Label text="Status Cadastro:" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                                <ComboBox fx:id="comboStatus" prefWidth="300" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                            </children>
+                        </GridPane>
+
+                        <HBox spacing="10" style="-fx-padding: 15 0 0 0;">
+                            <Button fx:id="btnAdicionar" onAction="#handleAdicionarGuiche" style="-fx-background-color: #28a745; -fx-text-fill: white;" text="Adicionar" />
+                            <Button fx:id="btnEditar" disable="true" onAction="#handleEditar" text="Editar" />
+                            <Button fx:id="btnSalvar" disable="true" onAction="#handleSalvar" style="-fx-background-color: #007bff; -fx-text-fill: white;" text="Salvar" />
+                            <Button fx:id="btnExcluir" disable="true" onAction="#handleExcluir" style="-fx-background-color: #dc3545; -fx-text-fill: white;" text="Excluir" />
+                        </HBox>
+                    </VBox>
+
+                    <TableView fx:id="tableViewGuiches" VBox.vgrow="ALWAYS">
+                        <columns>
+                            <TableColumn fx:id="colNumero" prefWidth="80" text="Número" />
+                            <TableColumn fx:id="colDescricao" prefWidth="200" text="Descrição" />
+                            <TableColumn fx:id="colLocalizacao" prefWidth="200" text="Localização" />
+                            <TableColumn fx:id="colAlocacao" prefWidth="130" text="Alocação" />
+                            <TableColumn fx:id="colStatus" prefWidth="130" text="Status" />
+                        </columns>
+                    </TableView>
+                </VBox>
+            </Tab>
+
+            <Tab text="Alocação">
+                <fx:include source="AlocacaoView.fxml" />
+            </Tab>
+
+            <Tab text="Serviços">
+                <fx:include source="TipoAtendimentoView.fxml" />
+            </Tab>
+            
+            <Tab text="Estatísticas">
+                <fx:include source="EstatisticasView.fxml" />
+            </Tab>
+        </TabPane>
+    </center>
+</BorderPane>

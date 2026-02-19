@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx" 
+xmlns:fx="http://javafx.com/fxml"
+fx:controller="com.sistemasenhas.views.admin.dashboard.DashboardController"
+spacing="20"
+style="-fx-padding: 20;">
+
+<Label text="DASHBOARD - VISÃO GERAL" 
+       style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+<HBox spacing="20">
+       <VBox style="-fx-background-color: #3498db; -fx-padding: 20; -fx-background-radius: 10;" 
+              prefWidth="200" prefHeight="150">
+       <Label text="ATENDIMENTOS HOJE" 
+              style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+       <Label text="0" 
+              style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"
+              fx:id="lblAtendimentosHoje"/>
+       <Label text="+0% vs ontem" 
+              style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;"/>
+       </VBox>
+
+       <VBox style="-fx-background-color: #2ecc71; -fx-padding: 20; -fx-background-radius: 10;" 
+              prefWidth="200" prefHeight="150">
+       <Label text="ATENDENTES ATIVOS" 
+              style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+       <Label text="0" 
+              style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"
+              fx:id="lblAtendentesAtivos"/>
+       <Label text="de 0 totais" 
+              style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;"/>
+       </VBox>
+
+       <VBox style="-fx-background-color: #e74c3c; -fx-padding: 20; -fx-background-radius: 10;" 
+              prefWidth="200" prefHeight="150">
+       <Label text="SENHAS NA FILA" 
+              style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+       <Label text="0" 
+              style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"
+              fx:id="lblSenhasFila"/>
+       <Label text="Tempo médio: 0min" 
+              style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;"/>
+       </VBox>
+
+       <VBox style="-fx-background-color: #f39c12; -fx-padding: 20; -fx-background-radius: 10;" 
+              prefWidth="200" prefHeight="150">
+       <Label text="TOTENS ATIVOS" 
+              style="-fx-text-fill: white; -fx-font-size: 14px; -fx-font-weight: bold;"/>
+       <Label text="0" 
+              style="-fx-text-fill: white; -fx-font-size: 36px; -fx-font-weight: bold;"
+              fx:id="lblTotensAtivos"/>
+       <Label text="Painéis: 0 ativos" 
+              style="-fx-text-fill: #ecf0f1; -fx-font-size: 12px;"/>
+       </VBox>
+</HBox>
+
+<HBox spacing="20" VBox.vgrow="ALWAYS">
+       <VBox style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" 
+              prefWidth="400" HBox.hgrow="ALWAYS">
+       <Label text="ATENDIMENTOS POR TIPO (HOJE)" 
+              style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+       <PieChart fx:id="chartAtendimentosTipo" 
+                     style="-fx-padding: 20 0 0 0;"/>
+       </VBox>
+
+       <VBox style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);" 
+              prefWidth="400" HBox.hgrow="ALWAYS">
+       <Label text="ATENDIMENTOS POR HORA" 
+              style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+       <LineChart fx:id="chartAtendimentosHora" 
+                     style="-fx-padding: 20 0 0 0;">
+              <xAxis>
+              <CategoryAxis label="Hora" />
+              </xAxis>
+              <yAxis>
+              <NumberAxis label="Quantidade" />
+              </yAxis>
+       </LineChart>
+       </VBox>
+</HBox>
+
+<VBox spacing="10">
+       <Label text="ATALHOS RÁPIDOS" 
+              style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+       <HBox spacing="10">
+       <Button text="Novo Usuário" 
+              style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+              onAction="#abrirNovoUsuario"/>
+       <Button text="Novo Tipo de Atendimento" 
+              style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+              onAction="#abrirNovoTipoAtendimento"/>
+       <Button text="Configurar Totem" 
+              style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+              onAction="#abrirConfigTotem"/>
+       <Button text="Gerar Relatório" 
+              style="-fx-background-color: #9b59b6; -fx-text-fill: white; -fx-font-weight: bold; -fx-padding: 10 20;"
+              onAction="#abrirRelatorios"/>
+       </HBox>
+</VBox>
+
+</VBox>

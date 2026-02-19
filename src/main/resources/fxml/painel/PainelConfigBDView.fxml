@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.sistemasenhas.views.painel.PainelConfigBDController"
+      style="-fx-background-color: #f8f9fa; -fx-padding: 30;"
+      alignment="TOP_CENTER" spacing="20" prefWidth="450" prefHeight="400">
+    
+    <children>
+        <!-- Título -->
+        <Label text="CONFIGURAÇÃO DO BANCO DE DADOS"
+               style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+            <font>
+                <Font name="Arial" size="20"/>
+            </font>
+        </Label>
+        
+        <!-- Formulário -->
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 0);">
+            <children>
+                <!-- Host -->
+                <VBox spacing="5">
+                    <children>
+                        <Label text="Host do Banco:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <TextField fx:id="txtHost" 
+                                 promptText="Ex: localhost ou 192.168.1.100"
+                                 style="-fx-font-size: 14; -fx-pref-height: 35; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+                    </children>
+                </VBox>
+                
+                <!-- Porta -->
+                <VBox spacing="5">
+                    <children>
+                        <Label text="Porta:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <TextField fx:id="txtPorta" 
+                                 promptText="Ex: 3306"
+                                 style="-fx-font-size: 14; -fx-pref-height: 35; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+                    </children>
+                </VBox>
+                
+                <!-- Banco -->
+                <VBox spacing="5">
+                    <children>
+                        <Label text="Nome do Banco:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <TextField fx:id="txtBanco" 
+                                 promptText="Ex: db_gerasenhas"
+                                 style="-fx-font-size: 14; -fx-pref-height: 35; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+                    </children>
+                </VBox>
+                
+                <!-- Usuário -->
+                <VBox spacing="5">
+                    <children>
+                        <Label text="Usuário:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <TextField fx:id="txtUsuario" 
+                                 promptText="Ex: root"
+                                 style="-fx-font-size: 14; -fx-pref-height: 35; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+                    </children>
+                </VBox>
+                
+                <!-- Senha -->
+                <VBox spacing="5">
+                    <children>
+                        <Label text="Senha:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <PasswordField fx:id="txtSenha" 
+                                     promptText="Digite a senha do banco"
+                                     style="-fx-font-size: 14; -fx-pref-height: 35; -fx-border-color: #bdc3c7; -fx-border-radius: 5; -fx-background-radius: 5;"/>
+                    </children>
+                </VBox>
+                
+                <!-- Mensagem -->
+                <Label fx:id="lblMensagem" text="" 
+                       style="-fx-font-size: 12; -fx-font-style: italic; -fx-wrap-text: true; -fx-pref-width: 350;"/>
+                
+                <!-- Botões -->
+                <HBox spacing="10" alignment="CENTER">
+                    <children>
+                        <Button fx:id="btnTestar" text="TESTAR" onAction="#handleTestConnection"
+                               style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-pref-height: 35; -fx-pref-width: 100; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                        
+                        <Button fx:id="btnSalvar" text="SALVAR" onAction="#handleSave"
+                               style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-pref-height: 35; -fx-pref-width: 100; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                        
+                        <Button fx:id="btnCancelar" text="CANCELAR" onAction="#handleCancel"
+                               style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-pref-height: 35; -fx-pref-width: 100; -fx-background-radius: 5; -fx-cursor: hand;"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.sistemasenhas.views.totem.TotemPrincipalController"
+           style="-fx-background-color: #f8f9fa;">
+    
+    <top>
+        <!-- Cabeçalho -->
+        <HBox style="-fx-background-color: #5693f5; -fx-padding: 15;" alignment="CENTER_LEFT">
+            <Label text="SISTEMA DE SENHAS"
+                   style="-fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold;"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label fx:id="lblNomeEmpresa" text="EMPRESA"
+                   style="-fx-text-fill: white; -fx-font-size: 10; -fx-font-weight: normal;"/>
+        </HBox>
+    </top>
+    
+    <center>
+        <!-- Container de Serviços com GridPane para layout dinâmico -->
+        <GridPane fx:id="containerServicos" 
+                  style="-fx-background-color: #f8f9fa; -fx-padding: 20;"
+                  hgap="15" vgap="15"
+                  alignment="CENTER">
+            <!-- Botões de serviço serão adicionados dinamicamente aqui -->
+        </GridPane>
+    </center>
+    
+    <bottom>
+        <!-- Rodapé igual ao admin -->
+        <HBox alignment="CENTER_LEFT" prefHeight="30.0" style="-fx-background-color: #5693f5; -fx-padding: 0 15 0 15;">
+            <children>
+                <Label style="-fx-text-fill: white; -fx-font-size: 12px;" text="Sistema de Gerenciamento de Senhas v1.0 2026" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblDataHoraCompleta" style="-fx-text-fill: white; -fx-font-size: 12px;" text="Aguardando atualização..." />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

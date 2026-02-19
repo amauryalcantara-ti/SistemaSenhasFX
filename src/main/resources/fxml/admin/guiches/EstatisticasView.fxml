@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistemasenhas.views.admin.guiches.EstatisticasController">
+    <padding>
+        <Insets top="12" right="12" bottom="12" left="12" />
+    </padding>
+
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <Label text="Período" style="-fx-font-weight: bold;" />
+        <DatePicker fx:id="dpDataInicio" />
+        <Label text="até" />
+        <DatePicker fx:id="dpDataFim" />
+        <Button text="Gerar" onAction="#handleGerar" />
+        <Button text="Salvar Agregados" onAction="#handleSalvarAgregados" />
+    </HBox>
+
+    <TabPane fx:id="tabPaneEstatisticas" VBox.vgrow="ALWAYS" tabClosingPolicy="UNAVAILABLE">
+        <Tab fx:id="tabGuiches" text="Guichês">
+            <VBox spacing="6">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="TMA por Guichê (segundos)" style="-fx-font-weight: bold;" />
+                <BarChart fx:id="chartGuiche" animated="false" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis />
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </Tab>
+        
+        <Tab fx:id="tabLocais" text="Locais">
+            <VBox spacing="6">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="TMA por Local (segundos)" style="-fx-font-weight: bold;" />
+                <BarChart fx:id="chartLocais" animated="false" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis />
+                    </yAxis>
+                </BarChart>
+            </VBox>
+        </Tab>
+        
+        <Tab fx:id="tabUsuarios" text="Usuários">
+            <VBox spacing="6">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="TMA Médio por Usuário (segundos)" style="-fx-font-weight: bold;" />
+                <BarChart fx:id="chartUsuarios" animated="false" VBox.vgrow="ALWAYS">
+                    <xAxis>
+                        <CategoryAxis />
+                    </xAxis>
+                    <yAxis>
+                        <NumberAxis />
+                    </yAxis>
+                </BarChart>
+                <TableView fx:id="tableUsuarios" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colUsuario" text="Usuário" prefWidth="200"/>
+                        <TableColumn fx:id="colTMAMedio" text="TMA Médio" prefWidth="120"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+        
+        <Tab fx:id="tabComparacao" text="Comparação">
+            <VBox spacing="6">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="Comparação por Atendimento (ordem decrescente)" style="-fx-font-weight: bold;" />
+                <TableView fx:id="tableComparacao" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colCompUsuario" text="Usuário" prefWidth="200"/>
+                        <TableColumn fx:id="colTotalAtendimentos" text="Total Atendimentos" prefWidth="120"/>
+                        <TableColumn fx:id="colCompTMAMedio" text="TMA Médio" prefWidth="120"/>
+                        <TableColumn fx:id="colMenorTempo" text="Menor Tempo" prefWidth="100"/>
+                        <TableColumn fx:id="colMaiorTempo" text="Maior Tempo" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+        
+        <Tab text="Detalhes">
+            <VBox spacing="6">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+                <Label text="Tabela de Estatísticas Detalhadas" style="-fx-font-weight: bold;" />
+                <TableView fx:id="tableEstat" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="colData" text="Data" prefWidth="120"/>
+                        <TableColumn fx:id="colGuiche" text="Guichê" prefWidth="100"/>
+                        <TableColumn fx:id="colServico" text="Serviço" prefWidth="150"/>
+                        <TableColumn fx:id="colLocal" text="Local" prefWidth="150"/>
+                        <TableColumn fx:id="colTMA" text="TMA (s)" prefWidth="100"/>
+                        <TableColumn fx:id="colQtd" text="Atendimentos" prefWidth="100"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox>

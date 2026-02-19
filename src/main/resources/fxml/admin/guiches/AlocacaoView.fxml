@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox spacing="20" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistemasenhas.views.admin.guiches.AlocacaoController">
+    
+    <VBox spacing="15" style="-fx-background-color: #f8f9fa; -fx-padding: 15; -fx-border-radius: 5; -fx-border-color: #dee2e6;">
+        
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Label style="-fx-font-weight: bold; -fx-min-width: 120;" text="Filtrar por Local:" />
+            <ComboBox fx:id="comboLocalFiltro" prefWidth="250" promptText="Selecione o Local" />
+            <Button fx:id="btnAtualizar" onAction="#handleAtualizar" prefWidth="120" text="Atualizar Lista" />
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Label style="-fx-font-weight: bold; -fx-min-width: 120;" text="Atendente:" />
+            <ComboBox fx:id="comboAtendente" prefWidth="200" promptText="Selecione o Usuário" />
+            
+            <Label style="-fx-font-weight: bold;" text="Guichê:" />
+            <ComboBox fx:id="comboGuiche" prefWidth="200" promptText="Selecione o Guichê" />
+        </HBox>
+
+        <HBox alignment="CENTER_LEFT" spacing="15">
+            <Label style="-fx-font-weight: bold; -fx-min-width: 120;" text="Data:" />
+            <DatePicker fx:id="datePicker" prefWidth="150" />
+            
+            <Button fx:id="btnAlocar" disable="true" onAction="#handleAlocar" prefWidth="100" style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-weight: bold;" text="Alocar" />
+            <Button fx:id="btnDesalocar" disable="true" onAction="#handleDesalocar" prefWidth="100" style="-fx-background-color: #dc3545; -fx-text-fill: white; -fx-font-weight: bold;" text="Desalocar" />
+        </HBox>
+    </VBox>
+
+    <TableView fx:id="tableViewAlocacao" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colGuiche" prefWidth="150" text="Guichê" />
+            <TableColumn fx:id="colStatusCadastro" prefWidth="150" text="Status" />
+            <TableColumn fx:id="colSituacao" prefWidth="150" text="Situação" />
+            <TableColumn fx:id="colOperador" prefWidth="250" text="Operador Atual" />
+        </columns>
+    </TableView>
+
+    <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 10 0 0 0;">
+        <Label fx:id="lblInfo" style="-fx-text-fill: #666;" text="Selecione um local para gerenciar os guichês." />
+    </HBox>
+
+</VBox>

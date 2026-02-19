@@ -1,0 +1,17 @@
+﻿# build
+target/
+*.class
+*.log
+
+# backups e scans
+*.bak
+*.backup
+riscos_scan.txt
+segredos_encontrados.txt
+
+# SDKs locais
+jdk-*/
+javafx-sdk-*/
+
+# IDE
+.vscode/

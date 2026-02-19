@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.sistemasenhas.views.login.LoginController"
+    style="-fx-background-color: #f5f5f5;">
+    
+    <center>
+        <!-- Cabeçalho e formulário juntos -->
+        <VBox alignment="CENTER" spacing="5" 
+              style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 8; -fx-border-color: #ddd; -fx-border-width: 1;">
+            
+            <Label text="SISTEMA DE GERENCIAMENTO DE SENHAS"
+                   style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+            <Label text="NOME DA EMPRESA CLIENTE"
+                   style="-fx-font-size: 14px; -fx-text-fill: #7f8c8d;"/>
+            <Label text="Sejam Bem Vindos!"
+                   style="-fx-font-size: 13px; -fx-text-fill: #34495e;"/>
+            <Label text="Entre com suas Credenciais!"
+                   style="-fx-font-size: 12px; -fx-text-fill: #34495e; -fx-padding: 0 0 10 0;"/>
+            
+            <!-- Container do formulário -->
+            <VBox spacing="8" alignment="CENTER" style="-fx-padding: 5 0 0 0;">
+                <VBox spacing="2" alignment="CENTER_LEFT">
+                    <Label text="Usuário:" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    <TextField fx:id="txtUsuario" promptText="Digite seu usuário" 
+                               prefWidth="220" prefHeight="30"
+                               style="-fx-border-radius: 4; -fx-border-color: #ccc; -fx-border-width: 1; -fx-padding: 5;"/>
+                </VBox>
+                <VBox spacing="2" alignment="CENTER_LEFT">
+                    <Label text="Senha:" style="-fx-font-size: 12px; -fx-text-fill: #555;"/>
+                    <HBox spacing="5" alignment="CENTER_LEFT">
+                        <PasswordField fx:id="txtSenha" promptText="Digite sua senha" 
+                                      prefWidth="180" prefHeight="30"
+                                      style="-fx-border-radius: 4; -fx-border-color: #ccc; -fx-border-width: 1; -fx-padding: 5;"/>
+                        <TextField fx:id="txtSenhaVisivel" promptText="Digite sua senha" 
+                                  prefWidth="180" prefHeight="30"
+                                  visible="false" managed="false"
+                                  style="-fx-border-radius: 4; -fx-border-color: #ccc; -fx-border-width: 1; -fx-padding: 5;"/>
+                        <ToggleButton fx:id="toggleSenha" text="👁" 
+                                      prefWidth="35" prefHeight="30"
+                                      style="-fx-background-color: #f8f9fa; -fx-border-radius: 4; -fx-border-color: #ccc; -fx-border-width: 1; -fx-font-size: 14px;"/>
+                    </HBox>
+                </VBox>
+                <Button fx:id="btnLogin" text="Entrar" 
+                        prefWidth="220" prefHeight="35"
+                        style="-fx-background-color: #007bff; -fx-text-fill: white; -fx-font-weight: bold; -fx-border-radius: 4; -fx-font-size: 13px; -fx-cursor: hand;"/>
+            </VBox>
+        </VBox>
+    </center>
+    
+    <bottom>
+        <!-- Rodapé fixo na parte inferior -->
+        <HBox alignment="CENTER" style="-fx-padding: 10; -fx-background-color: #f5f5f5;">
+            <HBox HBox.hgrow="ALWAYS" alignment="CENTER_LEFT">
+                <Label text="Versão: 1.0.0" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+            </HBox>
+            <HBox alignment="CENTER_RIGHT">
+                <Label fx:id="lblDataHora" text="14/02/2026 09:20" style="-fx-font-size: 10px; -fx-text-fill: #666;"/>
+            </HBox>
+        </HBox>
+    </bottom>
+</BorderPane>

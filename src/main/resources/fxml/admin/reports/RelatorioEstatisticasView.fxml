@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sistemasenhas.views.admin.reports.RelatorioEstatisticasController">
+    <padding>
+        <Insets top="12" right="12" bottom="12" left="12" />
+    </padding>
+    <Label text="Relatório de Estatísticas por Data" style="-fx-font-weight: bold;" />
+    <HBox spacing="10" alignment="CENTER_LEFT">
+        <DatePicker fx:id="dpData" />
+        <Button text="Carregar" onAction="#handleCarregar" />
+    </HBox>
+    <TableView fx:id="tableRel" VBox.vgrow="ALWAYS">
+        <columns>
+            <TableColumn fx:id="colData" text="Data" prefWidth="120"/>
+            <TableColumn fx:id="colGuiche" text="Guichê" prefWidth="100"/>
+            <TableColumn fx:id="colServico" text="Serviço" prefWidth="150"/>
+            <TableColumn fx:id="colLocal" text="Local" prefWidth="150"/>
+            <TableColumn fx:id="colTMA" text="TMA (s)" prefWidth="100"/>
+            <TableColumn fx:id="colQtd" text="Atendimentos" prefWidth="100"/>
+        </columns>
+    </TableView>
+</VBox>

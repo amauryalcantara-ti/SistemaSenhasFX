@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.sistemasenhas.views.totem.TotemConfirmacaoController"
+      style="-fx-background-color: white; -fx-padding: 25; -fx-background-radius: 10; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.2), 15, 0, 0, 0);"
+      alignment="CENTER" spacing="15" prefWidth="450" prefHeight="400">
+    
+    <children>
+        <!-- Título -->
+        <Label fx:id="lblTitulo" text="[NOME DA EMPRESA]"
+               style="-fx-font-size: 12; -fx-font-weight: bold; -fx-text-fill: #27ae60;">
+            <font>
+                <Font name="Arial" size="12"/>
+            </font>
+        </Label>
+        
+        <!-- Container da Senha -->
+        <VBox style="-fx-background-color: #91c4f7ff; -fx-padding: 20; -fx-background-radius: 8;" alignment="CENTER" spacing="10">
+            <children>
+                <Label fx:id="lblSenha" text="A001" 
+                       style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+                    <font>
+                        <Font name="Arial" size="20"/>
+                    </font>
+                </Label>
+            </children>
+        </VBox>
+        
+        <!-- Informações do Atendimento -->
+        <VBox alignment="CENTER_LEFT" spacing="8" style="-fx-padding: 10;">
+            <children>
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Serviço:" style="-fx-font-size: 10; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <Label fx:id="lblServico" text="Consulta Médica" style="-fx-font-size: 10; -fx-text-fill: #2c3e50;"/>
+                    </children>
+                </HBox>
+                
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Local:" style="-fx-font-size: 10; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <Label fx:id="lblLocal" text="Ambulatório" style="-fx-font-size: 10; -fx-text-fill: #2c3e50;"/>
+                    </children>
+                </HBox>
+                
+                <HBox spacing="10">
+                    <children>
+                        <Label text="Data/Hora:" style="-fx-font-size: 10; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                        <Label fx:id="lblDataHora" text="14/02/2026 21:33" style="-fx-font-size: 10; -fx-text-fill: #2c3e50;"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        
+        <!-- Tempo Médio de Espera -->
+        <VBox style="-fx-background-color: #91c4f7ff; -fx-padding: 15; -fx-background-radius: 8; -fx-border-color: #ddd; -fx-border-width: 1;" alignment="CENTER" spacing="5">
+            <children>
+                <Label text="TEMPO MÉDIO DE ESPERA:" style="-fx-font-size: 10; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <HBox spacing="10" alignment="CENTER">
+                    <children>
+                        <Label fx:id="lblTipoServico" text="Consulta Médica:" style="-fx-font-size: 8; -fx-text-fill: #2c3e50;"/>
+                        <Label fx:id="lblTempoEspera" text="15 minutos" style="-fx-font-size: 8; -fx-font-weight: bold; -fx-text-fill: #e74c3c;"/>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+        
+        <!-- Mensagem -->
+        <Label fx:id="lblMensagem" 
+               text="Por favor, aguarde sua senha ser chamada no painel eletrônico."
+               style="-fx-font-size: 10; -fx-text-fill: #7f8c8d; -fx-font-style: italic; -fx-wrap-text: true;"
+               alignment="CENTER" maxWidth="400"/>
+        
+        <!-- Botão Imprimir -->
+        <Button fx:id="btnOK" text="IMPRIMIR" onAction="#handleOK"
+               style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-pref-height: 30; -fx-pref-width: 80; -fx-background-radius: 5; -fx-cursor: hand;"/>
+    </children>
+</VBox>

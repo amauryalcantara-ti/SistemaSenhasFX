@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" 
+fx:controller="com.sistemasenhas.views.escolha.EscolhaAreaController"
+spacing="15" 
+alignment="CENTER"
+style="-fx-background-color: #f8f9fa; -fx-padding: 20;">
+
+<!-- Cabeçalho -->
+<VBox spacing="8" alignment="CENTER">
+       <Label text="ESCOLHA A ÁREA DE ACESSO" 
+              style="-fx-text-fill: #2c3e50;">
+       <font>
+              <Font name="System Bold" size="18" />
+       </font>
+       </Label>
+
+       <Label fx:id="lblUsuario" text="Usuário: " 
+              style="-fx-text-fill: #7f8c8d; -fx-font-size: 12;"/>
+
+       <Separator prefWidth="300" />
+</VBox>
+
+<!-- Área de botões -->
+<HBox spacing="30" alignment="CENTER">
+       <!-- Botão Área Administrativa -->
+       <VBox spacing="10" alignment="CENTER">
+       <Button fx:id="btnAreaAdmin" text="ÁREA&#10;ADMINISTRATIVA" 
+              prefWidth="180" prefHeight="80"
+              style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-radius: 8;">
+              <padding>
+              <Insets top="10" bottom="10" left="15" right="15" />
+              </padding>
+       </Button>
+
+       <VBox spacing="3" alignment="CENTER">
+              <Label text="• Gerenciar usuários" 
+                     style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;"/>
+              <Label text="• Relatórios e estatísticas" 
+                     style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;"/>
+              <Label text="• Configurações" 
+                     style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;"/>
+       </VBox>
+       </VBox>
+
+       <!-- Botão Área Atendente -->
+       <VBox spacing="10" alignment="CENTER">
+       <Button fx:id="btnAreaAtendente" text="ÁREA&#10;ATENDENTE" 
+              prefWidth="180" prefHeight="80"
+              style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-background-radius: 8;">
+              <padding>
+              <Insets top="10" bottom="10" left="15" right="15" />
+              </padding>
+       </Button>
+
+       <VBox spacing="3" alignment="CENTER">
+              <Label text="• Chamar senhas" 
+                     style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;"/>
+              <Label text="• Realizar atendimentos" 
+                     style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;"/>
+              <Label text="• Gerenciar fila" 
+                     style="-fx-text-fill: #7f8c8d; -fx-font-size: 10;"/>
+       </VBox>
+       </VBox>
+</HBox>
+
+<!-- Rodapé -->
+<VBox spacing="8" alignment="CENTER" style="-fx-padding: 10 0 0 0;">
+       <Separator prefWidth="300" />
+       <Button fx:id="btnVoltar" text="Login" 
+              style="-fx-background-color: #6c757d; -fx-text-fill: white; -fx-font-size: 12;"
+              prefWidth="120"/>
+</VBox>
+
+</VBox>

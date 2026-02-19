@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane fx:id="rootPane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+           fx:controller="com.sistemasenhas.views.painel.PainelPrincipalController"
+           style="-fx-background-color: #1a1a2e;">
+    
+    <top>
+        <VBox>
+            <!-- Cabeçalho Principal -->
+            <HBox style="-fx-background-color: #5693f5; -fx-padding: 15;" alignment="CENTER_LEFT">
+                <Label text="SISTEMA DE SENHAS"
+                       style="-fx-text-fill: white; -fx-font-size: 18; -fx-font-weight: bold;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="lblNomeEmpresa" text="EMPRESA"
+                       style="-fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: normal;"/>
+                <Region prefWidth="20"/>
+                <!-- Botão de Configurações -->
+                <Button fx:id="btnConfig" text="⚙" onAction="#handleConfig"
+                        style="-fx-background-color: transparent; -fx-text-fill: white; -fx-font-size: 18; -fx-cursor: hand;"/>
+            </HBox>
+            
+            <!-- Feed Rolante -->
+            <HBox fx:id="feedContainer" style="-fx-background-color: #16213e; -fx-padding: 10;" alignment="CENTER">
+                <Label fx:id="lblFeedRolante" 
+                       text="Bem-vindo! Aguarde sua senha ser chamada no painel."
+                       style="-fx-text-fill: #e94560; -fx-font-size: 20; -fx-font-weight: bold;">
+                    <font>
+                        <Font name="Arial" size="20"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <!-- Container principal que pode ser dividido -->
+        <HBox fx:id="containerPrincipal">
+            <!-- Área do Painel (esquerda quando dividido) -->
+            <VBox fx:id="areaPainel" alignment="CENTER" spacing="20" style="-fx-padding: 30;" HBox.hgrow="ALWAYS">
+                
+                <!-- Área da Senha Atual (Principal) -->
+                <VBox fx:id="areaSenhaAtual" alignment="CENTER" spacing="15"
+                      style="-fx-background-color: #0f3460; -fx-background-radius: 15; -fx-padding: 40;">
+                    
+                    <!-- Label "SENHA ATUAL" -->
+                    <Label text="SENHA ATUAL"
+                           style="-fx-text-fill: #e94560; -fx-font-size: 28; -fx-font-weight: bold;">
+                        <font>
+                            <Font name="Arial Bold" size="28"/>
+                        </font>
+                    </Label>
+                    
+                    <!-- Número da Senha (BEM GRANDE) -->
+                    <Label fx:id="lblSenhaAtual" text="---"
+                           style="-fx-text-fill: #ffffff; -fx-font-size: 120; -fx-font-weight: bold;">
+                        <font>
+                            <Font name="Arial Black" size="120"/>
+                        </font>
+                    </Label>
+                    
+                    <!-- Guichê -->
+                    <HBox alignment="CENTER" spacing="15">
+                        <Label text="GUICHÊ:"
+                               style="-fx-text-fill: #94b3fd; -fx-font-size: 36; -fx-font-weight: bold;">
+                            <font>
+                                <Font name="Arial Bold" size="36"/>
+                            </font>
+                        </Label>
+                        <Label fx:id="lblGuicheAtual" text="--"
+                               style="-fx-text-fill: #ffffff; -fx-font-size: 48; -fx-font-weight: bold;">
+                            <font>
+                                <Font name="Arial Black" size="48"/>
+                            </font>
+                        </Label>
+                    </HBox>
+                    
+                    <!-- Tipo de Atendimento -->
+                    <Label fx:id="lblTipoAtendimento" text="Aguardando chamada..."
+                           style="-fx-text-fill: #94b3fd; -fx-font-size: 24;">
+                        <font>
+                            <Font name="Arial" size="24"/>
+                        </font>
+                    </Label>
+                    
+                </VBox>
+                
+                <!-- Separador -->
+                <Separator style="-fx-background-color: #5693f5;"/>
+                
+                <!-- Histórico das Últimas 5 Senhas -->
+                <VBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+                    <Label text="ÚLTIMAS CHAMADAS"
+                           style="-fx-text-fill: #94b3fd; -fx-font-size: 20; -fx-font-weight: bold;">
+                        <font>
+                            <Font name="Arial Bold" size="20"/>
+                        </font>
+                    </Label>
+                    
+                    <!-- Container do histórico -->
+                    <HBox fx:id="containerHistorico" alignment="CENTER" spacing="20">
+                        <!-- Cards do histórico serão adicionados dinamicamente -->
+                    </HBox>
+                </VBox>
+                
+            </VBox>
+            
+            <!-- Área da TV/Imagem (direita quando dividido) - inicialmente oculta -->
+            <VBox fx:id="areaTV" alignment="CENTER" visible="false" managed="false" 
+                  style="-fx-background-color: #000000;" HBox.hgrow="ALWAYS">
+                <ImageView fx:id="imagemTV" preserveRatio="true" fitWidth="640" fitHeight="480"/>
+                <Label fx:id="lblTV" text="Área de Mídia/TV" 
+                       style="-fx-text-fill: #666666; -fx-font-size: 24;"/>
+            </VBox>
+        </HBox>
+    </center>
+    
+    <bottom>
+        <!-- Rodapé igual ao totem -->
+        <HBox alignment="CENTER_LEFT" minHeight="50" prefHeight="50" style="-fx-background-color: #5693f5; -fx-padding: 0 15 0 15;">
+            <children>
+                <Label fx:id="lblNomeLocal" style="-fx-text-fill: white; -fx-font-size: 16px; -fx-font-weight: bold;" text="Local de Atendimento" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label style="-fx-text-fill: white; -fx-font-size: 14px;" text="Sistema de Gerenciamento de Senhas v1.0 2026" />
+                <Region HBox.hgrow="ALWAYS" />
+                <Label fx:id="lblDataHora" style="-fx-text-fill: white; -fx-font-size: 16px;" text="Aguardando atualização..." />
+            </children>
+        </HBox>
+    </bottom>
+</BorderPane>

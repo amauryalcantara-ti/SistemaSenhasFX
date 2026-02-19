@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" 
+    fx:controller="com.sistemasenhas.views.atendente.PopupChamadaController"
+    spacing="15" 
+    alignment="CENTER"
+    style="-fx-background-color: white; -fx-padding: 20; -fx-border-radius: 10; -fx-border-color: #2c3e50; -fx-border-width: 2;">
+
+    <!-- Título -->
+    <Label text="SENHA CHAMADA" 
+        style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #2c3e50;"/>
+
+    <!-- Senha chamada -->
+    <Label fx:id="lblSenhaChamada" text="--" 
+        style="-fx-font-size: 48; -fx-font-weight: bold; -fx-text-fill: #e74c3c; -fx-background-color: #f8f9fa; -fx-padding: 15; -fx-background-radius: 8;"/>
+
+    <!-- Tipo de serviço -->
+    <Label fx:id="lblTipoServico" text="--" 
+        style="-fx-font-size: 14; -fx-text-fill: #7f8c8d; -fx-font-style: italic;"/>
+
+    <!-- Botões de ação -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button fx:id="btnRechamar" text="📢 RECHAMAR" 
+            style="-fx-background-color: #f39c12; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-pref-width: 120; -fx-pref-height: 40; -fx-background-radius: 5;"/>
+        
+        <Button fx:id="btnOk" text="✓ OK" 
+            style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-pref-width: 80; -fx-pref-height: 40; -fx-background-radius: 5;"/>
+    </HBox>
+
+</VBox>

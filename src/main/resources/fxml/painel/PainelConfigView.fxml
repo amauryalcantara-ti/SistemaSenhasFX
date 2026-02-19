@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+      fx:controller="com.sistemasenhas.views.painel.PainelConfigController"
+      style="-fx-background-color: #f8f9fa; -fx-padding: 20;"
+      alignment="TOP_CENTER" spacing="15" prefWidth="500" prefHeight="550">
+    
+    <children>
+        <!-- Título -->
+        <Label text="CONFIGURAÇÕES DO PAINEL"
+               style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: #2c3e50;">
+            <font>
+                <Font name="Arial" size="20"/>
+            </font>
+        </Label>
+        
+        <!-- Container de configurações -->
+        <VBox spacing="15" style="-fx-background-color: white; -fx-padding: 20; -fx-background-radius: 8; -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 8, 0, 0, 0);">
+            
+            <!-- Cor de Fundo -->
+            <VBox spacing="5">
+                <Label text="Cor de Fundo:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <ColorPicker fx:id="colorPickerFundo" prefWidth="150"/>
+                    <Button fx:id="btnAplicarCor" text="Aplicar Cor" onAction="#handleAplicarCor"
+                           style="-fx-background-color: #3498db; -fx-text-fill: white; -fx-font-size: 12; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Imagem de Fundo -->
+            <VBox spacing="5">
+                <Label text="Imagem de Fundo:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="txtImagemFundo" promptText="Caminho da imagem..." prefWidth="280"
+                              style="-fx-font-size: 12;"/>
+                    <Button fx:id="btnEscolherImagem" text="..." onAction="#handleEscolherImagem"
+                           style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 12; -fx-cursor: hand;"/>
+                    <Button fx:id="btnLimparImagem" text="X" onAction="#handleLimparImagem"
+                           style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 12; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Separador -->
+            <Separator/>
+            
+            <!-- Dividir Tela com TV -->
+            <VBox spacing="5">
+                <Label text="Divisão de Tela:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <CheckBox fx:id="chkDividirTV" text="Dividir tela com TV/Mídia"
+                             style="-fx-font-size: 12;"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Imagem/Vídeo da TV -->
+            <VBox spacing="5">
+                <Label text="Imagem para área TV:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="txtImagemTV" promptText="Caminho da imagem da TV..." prefWidth="280"
+                              style="-fx-font-size: 12;"/>
+                    <Button fx:id="btnEscolherImagemTV" text="..." onAction="#handleEscolherImagemTV"
+                           style="-fx-background-color: #95a5a6; -fx-text-fill: white; -fx-font-size: 12; -fx-cursor: hand;"/>
+                </HBox>
+            </VBox>
+            
+            <!-- Separador -->
+            <Separator/>
+            
+            <!-- Mensagem do Feed -->
+            <VBox spacing="5">
+                <Label text="Mensagem do Feed Rolante (máx 500 caracteres):" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <TextArea fx:id="txtMensagemFeed" prefHeight="60" prefWidth="400"
+                         promptText="Mensagem que aparecerá no topo do painel..."
+                         style="-fx-font-size: 12;"/>
+            </VBox>
+
+            <!-- Cores do Feed -->
+            <VBox spacing="5">
+                <Label text="Cores do Feed:" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: #34495e;"/>
+                <HBox spacing="15" alignment="CENTER_LEFT">
+                    <Label text="Fonte:" style="-fx-font-size: 12;"/>
+                    <ColorPicker fx:id="colorPickerFonteFeed" prefWidth="100"/>
+                    <Label text="Fundo:" style="-fx-font-size: 12;"/>
+                    <ColorPicker fx:id="colorPickerFundoFeed" prefWidth="100"/>
+                </HBox>
+            </VBox>
+            
+        </VBox>
+        
+        <!-- Botões -->
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="btnSalvar" text="SALVAR" onAction="#handleSalvar"
+                   style="-fx-background-color: #27ae60; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-pref-height: 35; -fx-pref-width: 120; -fx-background-radius: 5; -fx-cursor: hand;"/>
+            
+            <Button fx:id="btnFechar" text="FECHAR" onAction="#handleFechar"
+                   style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 14; -fx-font-weight: bold; -fx-pref-height: 35; -fx-pref-width: 120; -fx-background-radius: 5; -fx-cursor: hand;"/>
+        </HBox>
+    </children>
+</VBox>

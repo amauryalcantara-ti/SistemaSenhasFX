@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+    xmlns:fx="http://javafx.com/fxml"
+    fx:controller="com.sistemasenhas.views.trocarsenha.TrocarSenhaController"
+    alignment="CENTER"
+    spacing="20"
+    style="-fx-padding: 30;">
+
+    <Label text="TROCA DE SENHA" style="-fx-font-size: 24px; -fx-font-weight: bold;"/>
+    <Label text="Primeiro acesso - Troca de senha obrigatória"/>
+
+    <VBox spacing="10" alignment="CENTER">
+        <Label text="NOVA SENHA!"/>
+        <HBox spacing="5" alignment="CENTER_LEFT">
+            <PasswordField fx:id="txtNovaSenha" promptText="Digite  a nova senha!" prefWidth="230"/>
+            <ToggleButton fx:id="toggleNovaSenha" text="Mostrar" prefWidth="70"/>
+        </HBox>
+        <!-- Campo de texto visível para nova senha -->
+        <TextField fx:id="txtNovaSenhaVisivel" promptText="Digite a nova senha!" prefWidth="230" visible="false" managed="false"/>
+
+        <Label text="Confirmar Senha."/>
+        <HBox spacing="5" alignment="CENTER_LEFT">
+            <PasswordField fx:id="txtConfirmarSenha" promptText="Confirme a nova senha!" prefWidth="230"/>
+            <ToggleButton fx:id="toggleConfirmarSenha" text="Mostrar" prefWidth="70"/>
+        </HBox>
+        <!-- Campo de texto visível para confirmar senha -->
+        <TextField fx:id="txtConfirmarSenhaVisivel" promptText="Confirme a nova senha!" prefWidth="230" visible="false" managed="false"/>
+    </VBox>
+
+    <Label fx:id="lblStatus" text="" style="-fx-text-fill: red;"/>
+
+    <HBox spacing="20" alignment="CENTER">
+        <Button fx:id="btnConfirmar" text="Confirmar" defaultButton="true"/>
+        <Button fx:id="btnCancelar" text="Cancelar" cancelButton="true"/>
+    </HBox>
+
+    <VBox spacing="5" style="-fx-background-color: #f0f0f0; -fx-padding: 10; -fx-border-radius: 5;">
+        <Label text="Requisitos:" style="-fx-font-weight: bold;"/>
+        <Label text="• Mínimo 10 caracteres"/>
+        <Label text="• Letras maiúsculas e minúsculas"/>
+        <Label text="• Pelo menos 1 número"/>
+        <Label text="• Pelo menos 1 caractere especial"/>
+    </VBox>
+
+</VBox>

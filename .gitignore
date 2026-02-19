@@ -15,3 +15,5 @@ javafx-sdk-*/
 
 # IDE
 .vscode/
+
+apache-maven-*/
